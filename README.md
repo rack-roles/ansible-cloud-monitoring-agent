@@ -1,6 +1,8 @@
 cloud-monitoring-agent
 ========
 
+[![Build Status](https://drone-opsdev.rax.io/github.com/rack-roles/cloud-monitoring-agent/status.svg?branch=master)](https://drone-opsdev.rax.io/github.com/rack-roles/cloud-monitoring-agent)
+
 This role installs and configures the Rackspace Cloud monitoring agent.
 
 Requirements
