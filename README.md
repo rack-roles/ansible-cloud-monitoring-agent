@@ -13,7 +13,8 @@ None.
 Role Variables
 --------------
 
-None.
+* `rackspace_username`: Pass your Rackspace username to configure the agent.
+* `rackspace_apikey`: Pass your Rackspace apikey to configure the agent.
 
 Dependencies
 ------------
