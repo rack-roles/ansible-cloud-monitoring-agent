@@ -15,6 +15,9 @@
 - name: ensure agent is started
   service: name=rackspace-monitoring-agent state=started
 
+- name: ensure the conf.d directory exists
+  file: path=/etc/rackspace-monitoring-agent.conf.d state=directory owner=root group=root mode=0644
+
 - name: configure checks and alarms
   template: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0644
   with_items: {{ cloud_monitoring_agent_checks }}
