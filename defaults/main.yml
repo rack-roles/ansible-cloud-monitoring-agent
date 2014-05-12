@@ -1,2 +1,15 @@
 ---
 # defaults file for cloud-monitoring-agent
+cloud_monitoring_agent_checks:
+  Filesystem:
+    src: filesystem.yaml.j2
+    dest: /etc/rackspace-monitoring-agent.conf.d/filesystem.yaml
+  Memory:
+    src: memory.yaml.j2
+    dest: /etc/rackspace-monitoring-agent.conf.d/memory.yaml
+  CPU:
+    src: cpu.yaml.j2
+    dest: /etc/rackspace-monitoring-agent.conf.d/cpu.yaml
+  Load:
+    src: load.yaml.j2
+    dest: /etc/rackspace-monitoring-agent.conf.d/load.yaml
