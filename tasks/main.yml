@@ -19,6 +19,6 @@
   file: path=/etc/rackspace-monitoring-agent.conf.d state=directory owner=root group=root mode=0644
 
 - name: configure checks and alarms
-  template: src={{ item.src }} dest={{ item.dest }} owner=root group=root mode=0644
+  template: src={{ item }}.yaml.j2 dest=/etc/rackspace-monitoring-agent.conf.d/{{ item }}.yaml owner=root group=root mode=0644
   with_items: cloud_monitoring_agent_checks
   notify: restart monitoring agent
