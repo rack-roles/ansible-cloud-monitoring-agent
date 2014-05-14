@@ -6,3 +6,5 @@ cloud_monitoring_default_checks:
   - cpu
   - load
 cloud_monitoring_additional_checks: []
+
+cloud_monitoring_filesystem_alarm: 

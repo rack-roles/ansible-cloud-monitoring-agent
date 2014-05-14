@@ -20,5 +20,5 @@
 
 - name: configure checks and alarms
   template: src={{ item }}.yaml.j2 dest=/etc/rackspace-monitoring-agent.conf.d/{{ item }}.yaml owner=root group=root mode=0644
-  with_items: cloud_monitoring_default_checks|unison(cloud_monitoring_additional_checks)
+  with_items: cloud_monitoring_default_checks| union(cloud_monitoring_additional_checks)
   notify: restart monitoring agent
