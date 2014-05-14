@@ -1,7 +1,8 @@
 ---
 # defaults file for cloud-monitoring-agent
-cloud_monitoring_agent_checks:
+cloud_monitoring_default_checks:
   - filesystem
   - memory
   - cpu
   - load
+cloud_monitoring_additional_checks: []
