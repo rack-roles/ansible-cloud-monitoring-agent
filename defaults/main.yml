@@ -7,4 +7,7 @@ cloud_monitoring_default_checks:
   - load
 cloud_monitoring_additional_checks: []
 
-cloud_monitoring_filesystem_alarm: 
+cloud_monitoring_filesystem_alarm: False
+cloud_monitoring_memory_alarm: False
+cloud_monitoring_cpu_alarm: False
+cloud_monitoring_load_alarm: False
