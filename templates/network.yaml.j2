@@ -11,7 +11,7 @@ alarms:
         label: Network receive rate on {{ cloud_monitoring_network_target | default("etho") }}
         notification_plan_id: npTechnicalContactsEmail
         criteria: |
-            if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_critial }}) {
+            if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_critical }}) {
               return new AlarmStatus(CRITICAL, "Network receive rate on eth0 is above your critical threshold of 29884416B/s");
             }
             if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_warning }}) {
@@ -22,7 +22,7 @@ alarms:
         label: Network transmit rate on  {{ cloud_monitoring_network_target | default("etho") }}
         notification_plan_id: npTechnicalContactsEmail
         criteria: |
-            if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_critial }}) {
+            if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_critical }}) {
               return new AlarmStatus(CRITICAL, "Network transmit rate on eth0 is above your critical threshold of 29884416B/s");
             }
             if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_warning }}) {

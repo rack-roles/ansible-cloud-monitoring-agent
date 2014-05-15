@@ -11,3 +11,8 @@ cloud_monitoring_filesystem_alarm: False
 cloud_monitoring_memory_alarm: False
 cloud_monitoring_cpu_alarm: False
 cloud_monitoring_load_alarm: False
+
+cloud_monitoring_network_receive_critical:
+cloud_monitoring_network_receive_warning:
+cloud_monitoring_network_transmit_critical:
+cloud_monitoring_network_transmit_warning:
