@@ -1,5 +1,5 @@
 type: agent.disk
-label: Filesystem check on {{ cloud_monitoring_disk_target | default("/") }}
+label: Disk check on {{ cloud_monitoring_disk_target | default("/") }}
 disabled: false
 period: {{ cloud_monitoring_disk_period | default(60) }}
 timeout: {{ cloud_monitoring_disk_timeout | default(30) }}

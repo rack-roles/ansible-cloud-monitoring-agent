@@ -1,0 +1,32 @@
+type: agent.network
+label: Network check on {{ cloud_monitoring_network_target | default("eth0") }}
+disabled: false
+period: {{ cloud_monitoring_network_period | default(60) }}
+timeout: {{ cloud_monitoring_network_timeout | default(30) }}
+details:
+  target: {{ cloud_monitoring_network_target | default("eth0") }}
+{% if cloud_monitoring_network_alarm == True %}
+alarms:
+    alarm-network-receive:
+        label: Network receive rate on {{ cloud_monitoring_network_target | default("etho") }}
+        notification_plan_id: npTechnicalContactsEmail
+        criteria: |
+            if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_critial }}) {
+              return new AlarmStatus(CRITICAL, "Network receive rate on eth0 is above your critical threshold of 29884416B/s");
+            }
+            if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_warning }}) {
+              return new AlarmStatus(WARNING, "Network receive rate on eth0 is above your warning threshold of 22020096B/s");
+            }
+            return new AlarmStatus(OK, "Network receive rate on eth0 is below your warning threshold of 22020096B/s");
+    alarm-network-transmit:
+        label: Network transmit rate on  {{ cloud_monitoring_network_target | default("etho") }}
+        notification_plan_id: npTechnicalContactsEmail
+        criteria: |
+            if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_critial }}) {
+              return new AlarmStatus(CRITICAL, "Network transmit rate on eth0 is above your critical threshold of 29884416B/s");
+            }
+            if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_warning }}) {
+              return new AlarmStatus(WARNING, "Network transmit rate on eth0 is above your warning threshold of 22020096B/s");
+            }
+            return new AlarmStatus(OK, "Network transmit rate on eth0 is below your warning threshold of 22020096B/s");
+{% endif %}
