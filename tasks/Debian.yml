@@ -1,12 +1,16 @@
 ---
+- name: Supported OS
+  set_fact:
+    base_supported_os: True
+
 - name: setup monitoring agent apt key
   apt_key: url='https://monitoring.api.rackspacecloud.com/pki/agent/linux.asc' state=present
 
-- name: setup monitoring agent apt repository
+- name: setup monitoring agent apt repository for ubuntu
   apt_repository: repo='deb http://stable.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_version }}-x86_64 cloudmonitoring main' state=present
   when: ansible_distribution == "Ubuntu"
 
-- name: setup monitoring agent apt repository
+- name: setup monitoring agent apt repository for debian
   apt_repository: repo='deb http://stable.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_release }}-x86_64 cloudmonitoring main' state=present
   when: ansible_distribution == "Debian"
 
