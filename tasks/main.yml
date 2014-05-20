@@ -16,7 +16,7 @@
   command: rackspace-monitoring-agent --setup --username {{ rackspace_username }} --apikey {{ rackspace_apikey }} creates=/etc/rackspace-monitoring-agent.cfg
 
 - name: ensure agent is started
-  service: name=rackspace-monitoring-agent state=started
+  service: name=rackspace-monitoring-agent state=started enabled=yes
 
 - name: ensure the conf.d directory exists
   file: path=/etc/rackspace-monitoring-agent.conf.d state=directory owner=root group=root mode=0644
