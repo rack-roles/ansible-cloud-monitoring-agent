@@ -11,5 +11,5 @@ alarms:
         label: usage on {{ cloud_monitoring_disk_target | default("/dev/xvda1") }}
         notification_plan_id: npTechnicalContactsEmail
         criteria: |
-	# TODO determine criteria
+            {{ cloud_monitoring_disk_alarm_criteria | default("") }}
 {% endif %}
