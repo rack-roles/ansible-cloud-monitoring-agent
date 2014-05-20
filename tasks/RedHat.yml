@@ -1,13 +1,13 @@
 ---
-- name: Supported OS
+- name: RedHat | Supported OS
   set_fact:
     base_supported_os: True
 
-- name: add rpm key
+- name: RedHat | add rpm key
   rpm_key: state=present key=https://monitoring.api.rackspacecloud.com/pki/agent/{{ ansible_distribution | lower }}-{{ ansible_distribution_major_version }}.asc
 
-- name: setup repo file
+- name: RedHat | setup repo file
   template: src=RedHat.repo.j2 dest=/etc/yum.repos.d/rackspace-cloud-monitoring.repo owner=root group=root mode=0644
 
-- name: install the agent
+- name: RedHat | install the agent
   yum: name=rackspace-monitoring-agent state=present
