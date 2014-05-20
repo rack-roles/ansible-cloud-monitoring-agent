@@ -12,21 +12,21 @@ alarms:
         notification_plan_id: npTechnicalContactsEmail
         criteria: |
             if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_critical }}) {
-              return new AlarmStatus(CRITICAL, "Network receive rate on eth0 is above your critical threshold of 29884416B/s");
+              return new AlarmStatus(CRITICAL, "Network receive rate on {{ cloud_monitoring_network_target | default("etho") }} is above your critical threshold of {{ cloud_monitoring_network_receive_critical }}B/s");
             }
             if (rate(metric['rx_bytes']) > {{ cloud_monitoring_network_receive_warning }}) {
-              return new AlarmStatus(WARNING, "Network receive rate on eth0 is above your warning threshold of 22020096B/s");
+              return new AlarmStatus(WARNING, "Network receive rate on {{ cloud_monitoring_network_target | default("etho") }} is above your warning threshold of {{ cloud_monitoring_network_receive_warning }}B/s");
             }
-            return new AlarmStatus(OK, "Network receive rate on eth0 is below your warning threshold of 22020096B/s");
+            return new AlarmStatus(OK, "Network receive rate on {{ cloud_monitoring_network_target | default("etho") }} is below your warning threshold of {{ cloud_monitoring_network_receive_warning }}B/s");
     alarm-network-transmit:
         label: Network transmit rate on  {{ cloud_monitoring_network_target | default("etho") }}
         notification_plan_id: npTechnicalContactsEmail
         criteria: |
             if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_critical }}) {
-              return new AlarmStatus(CRITICAL, "Network transmit rate on eth0 is above your critical threshold of 29884416B/s");
+              return new AlarmStatus(CRITICAL, "Network transmit rate on {{ cloud_monitoring_network_target | default("etho") }} is above your critical threshold of {{ cloud_monitoring_network_transmit_critical }}B/s");
             }
             if (rate(metric['tx_bytes']) > {{ cloud_monitoring_network_transmit_warning }}) {
-              return new AlarmStatus(WARNING, "Network transmit rate on eth0 is above your warning threshold of 22020096B/s");
+              return new AlarmStatus(WARNING, "Network transmit rate on {{ cloud_monitoring_network_target | default("etho") }} is above your warning threshold of {{ cloud_monitoring_network_transmit_warning }}B/s");
             }
-            return new AlarmStatus(OK, "Network transmit rate on eth0 is below your warning threshold of 22020096B/s");
+            return new AlarmStatus(OK, "Network transmit rate on {{ cloud_monitoring_network_target | default("etho") }} is below your warning threshold of {{ cloud_monitoring_network_transmit_warning }}B/s");
 {% endif %}

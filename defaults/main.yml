@@ -14,7 +14,7 @@ cloud_monitoring_load_alarm: False
 cloud_monitoring_network_alarm: False
 cloud_monitoring_disk_alarm: False
 
-cloud_monitoring_network_receive_critical: 76
-cloud_monitoring_network_receive_warning: 56
-cloud_monitoring_network_transmit_critical: 76
-cloud_monitoring_network_transmit_warning: 56
+cloud_monitoring_network_receive_critical: 76000
+cloud_monitoring_network_receive_warning: 56000
+cloud_monitoring_network_transmit_critical: 76000
+cloud_monitoring_network_transmit_warning: 56000
