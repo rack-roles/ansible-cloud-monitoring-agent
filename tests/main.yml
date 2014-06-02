@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  connection: local
   vars:
     cloud_monitoring_additional_checks:
       - disk
