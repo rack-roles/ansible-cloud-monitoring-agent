@@ -16,7 +16,7 @@
   service: name=rackspace-monitoring-agent state=started enabled=yes
 
 - name: ensure the conf.d directory exists
-  file: path=/etc/rackspace-monitoring-agent.conf.d state=directory owner=root group=root mode=0644
+  file: path=/etc/rackspace-monitoring-agent.conf.d state=directory owner=root group=root mode=0755
 
 - name: configure checks and alarms
   template: src={{ item }}.yaml.j2 dest=/etc/rackspace-monitoring-agent.conf.d/{{ item }}.yaml owner=root group=root mode=0644
