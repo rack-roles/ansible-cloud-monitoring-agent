@@ -11,6 +11,7 @@
 
 - name: setup the monitoring agent
   command: rackspace-monitoring-agent --setup --username {{ rackspace_username }} --apikey {{ rackspace_apikey }} creates=/etc/rackspace-monitoring-agent.cfg
+  when: cloud_monitoring_agent_force_setup is False
 
 - name: force setup of the monitoring agent
   command: rackspace-monitoring-agent --setup --username {{ rackspace_username }} --apikey {{ rackspace_apikey }}
