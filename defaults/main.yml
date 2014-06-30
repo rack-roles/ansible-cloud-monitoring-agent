@@ -1,5 +1,6 @@
 ---
 # defaults file for cloud-monitoring-agent
+cloud_monitoring_agent_force_setup: False
 cloud_monitoring_default_checks:
   - filesystem
   - memory

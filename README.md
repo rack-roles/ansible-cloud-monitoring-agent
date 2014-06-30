@@ -17,6 +17,7 @@ Role Variables
 
 * `rackspace_username`: Pass your Rackspace username to configure the agent.
 * `rackspace_apikey`: Pass your Rackspace apikey to configure the agent.
+* `cloud_monitoring_agent_force_setup`: Force the setup command to run even if the bootstrap file exists.
 * `cloud_monitoring_default_checks`: A series of default checks applied to the agent.
 * `cloud_monitoring_additional_checks`: A series of additional checks to be applied to the agent.
 
