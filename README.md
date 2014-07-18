@@ -8,7 +8,7 @@ This role installs and configures the Rackspace Cloud monitoring agent.
 Requirements
 ------------
 
-None.
+Requires a Rackspace Public Cloud server to run completely unattended. See [Issue 4](https://github.com/rack-roles/cloud-backup-agent/issues/4).
 
 Role Variables
 --------------
