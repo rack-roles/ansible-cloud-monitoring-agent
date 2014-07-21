@@ -4,7 +4,7 @@
     base_supported_os: True
 
 - name: Debian | setup monitoring agent apt key
-  apt_key: url='https://monitoring.api.rackspacecloud.com/pki/agent/linux.asc' state=present
+  apt_key: id=D05AB914 url='https://monitoring.api.rackspacecloud.com/pki/agent/linux.asc' state=present
 
 - name: Ubuntu | setup monitoring agent apt repository
   apt_repository: repo='deb http://stable.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_version }}-x86_64 cloudmonitoring main' state=present
