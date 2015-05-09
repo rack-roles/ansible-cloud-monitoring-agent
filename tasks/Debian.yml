@@ -7,11 +7,11 @@
   apt_key: id=D05AB914 url='https://monitoring.api.rackspacecloud.com/pki/agent/linux.asc' state=present
 
 - name: Ubuntu | setup monitoring agent apt repository
-  apt_repository: repo='deb http://stable.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_version }}-x86_64 cloudmonitoring main' state=present
+  apt_repository: repo='deb http://{{ cloud_monitoring_agent_repo_branch }}.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_version }}-x86_64 cloudmonitoring main' state=present
   when: ansible_distribution == "Ubuntu"
 
 - name: Debian | setup monitoring agent apt repository
-  apt_repository: repo='deb http://stable.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_release }}-x86_64 cloudmonitoring main' state=present
+  apt_repository: repo='deb http://{{ cloud_monitoring_agent_repo_branch }}.packages.cloudmonitoring.rackspace.com/{{ ansible_distribution | lower }}-{{ ansible_distribution_release }}-x86_64 cloudmonitoring main' state=present
   when: ansible_distribution == "Debian"
 
 - name: Debian | install monitoring agent
