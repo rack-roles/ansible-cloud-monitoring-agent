@@ -10,7 +10,7 @@
   when: base_supported_os is not defined
 
 - name: setup the monitoring agent
-  command: rackspace-monitoring-agent --setup --username {{ rackspace_username }} --apikey {{ rackspace_apikey }} creates=/etc/rackspace-monitoring-agent.cfg
+  command: rackspace-monitoring-agent -A --setup --username {{ rackspace_username }} --apikey {{ rackspace_apikey }} creates=/etc/rackspace-monitoring-agent.cfg
   when: not cloud_monitoring_agent_force_setup
 
 - name: force setup of the monitoring agent
